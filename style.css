@@ -32,20 +32,20 @@ body {
 
 /* Header Section Code */
 header {
-  width: 100%;
-  background-color: var(--headercolor);
   height: 10vh;
+  width: 100vw;
+  background-color: var(--headercolor);
   box-shadow: 0 0.2rem 6rem 0 rgb(13, 13, 13);
 }
 
 .navbar {
-  height: inherit;
+  height: 10vh;
   width: 100vw;
-  padding: 0 10rem 0 10rem;
+  /* padding: 0 10rem 0 10rem; */
   display: flex;
   justify-content: space-around;
   align-items: center;
-  gap: 20px;
+  gap: 2rem;
 
   & logo {
     display: flex;
@@ -65,7 +65,7 @@ header {
 .navbar ul {
   list-style-type: none;
   display: flex;
-  gap: 1.7rem;
+  gap: 1rem;
 
   & li a {
     text-decoration: none;
@@ -220,8 +220,8 @@ header {
       border-bottom: 2px solid rgb(83, 81, 81);
 
       @media (width <= 430px) {
-        font-size: 8rem;
-        padding: 5rem 0;
+        font-size: 7rem;
+        padding: 3rem 0;
       }
     }
   }
@@ -233,10 +233,10 @@ header {
     justify-content: center;
     align-content: start;
     flex-wrap: wrap;
-    gap: 3rem;
+    gap: 2rem;
 
     &:last-child{
-      margin-bottom: 5rem;
+      margin-bottom: 3rem;
     }
 
 
@@ -247,8 +247,8 @@ header {
       width: 30rem;
       font-size: 2.5rem;
       @media (width <= 430px) {
-        font-size: 4.5rem;
-        height: 10rem;
+        font-size: 4rem;
+        height: 8rem;
         width: 60rem;
       }
       font-weight: 500;
@@ -439,15 +439,18 @@ header {
       }
     }
 
-    & input[type="reset"],
-    input[type="submit"] {
+    & .buttons button {
       height: 3.5rem;
       width: 9rem;
       border-radius: 0.5rem;
       border: 0.1rem solid rgb(27, 26, 26);
-      background-color: rgb(27, 118, 237);
+      background-color: hsl(214, 85%, 52%);
       color: rgb(239, 235, 235);
       font-size: 1.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   
 
       @media (width <= 430px) {
         font-size: 4rem;
@@ -456,6 +459,7 @@ header {
         padding: 2rem;
         margin: 1rem 0 5rem 0;
         border-radius: 1rem;
+
       }
 
       &:hover {
@@ -495,6 +499,10 @@ footer {
   & .copyright {
     font-size: 1.5rem;
     color: white;
+    
+    @media (width<=430px) {
+      font-size: 3rem;
+    }
   }
 
   & .social-media ul {
@@ -503,6 +511,11 @@ footer {
     gap: 2rem;
     margin-top: 0.5rem;
     font-size: 2rem;
+
+    @media (width<=430px) {
+      font-size: 5rem;
+      gap: 3rem;
+    }
 
     & a {
       color: white;
@@ -532,7 +545,7 @@ footer {
     font-size: 30%;
   }
   .hero {
-    flex-direction: column-reverse;
+    flex-direction: column;
 
     & .intro {
       align-items: center;
