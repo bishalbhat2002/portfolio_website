@@ -14,10 +14,10 @@
   --headercolor: #1a1819;
   --footercolor: #1a1819;
   --bodycolor: #2a1c3fdc;
-  --containercolor: rgb(227, 177, 61);
+  --containercolor: rgb(131, 162, 231);
   --cont-containercolor: blue;
   --hero-sec-textcolor: #ffa800;
-  --button-backgroundcolor: #920ccf;
+  --button-backgroundcolor: #7b0bae;
   --imagebackgroundcolor: #e1d8d9;
 }
 
@@ -252,12 +252,13 @@ header {
         width: 60rem;
       }
       font-weight: 500;
-      background-color: rgb(146, 249, 148);
+      background-color: rgb(163, 227, 53);
       border-radius: 2rem;
       display: flex;
       align-items: center;
       justify-content: center;
       text-decoration: none;
+      box-shadow: 0 0.5rem 1rem 0 rgb(53, 53, 53);
     }
 
     & a:hover {
