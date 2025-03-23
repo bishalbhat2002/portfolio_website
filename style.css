@@ -366,8 +366,8 @@ header {
   margin-top: 10vh;
 
   & .form {
-    height: 70rem;
-    width: 60rem;
+    height: 50rem;
+    width: 50rem;
     @media (width <= 430px) {
       height: 100rem;
       width: 80rem;
@@ -381,8 +381,8 @@ header {
     font-size: 2rem;
 
     & .contact-me {
-      height: 5rem;
-      width: 50rem;
+      height: 1rem;
+      width: 40rem;
       font-size: 3rem;
       font-weight: 700;
       color: rgb(46, 45, 45);
@@ -399,7 +399,7 @@ header {
     }
 
     & label {
-      font-size: 2.5rem;
+      font-size: 2rem;
       @media (width <= 430px) {
         font-size: 4rem;
         height: 4rem;
@@ -409,17 +409,17 @@ header {
 
     & #name,
     #email {
-      font-size: 2.5rem;
+      font-size: 1.5rem;
       height: 7rem;
-      width: 50rem;
-      padding: 0 2rem;
+      width: 40rem;
+      padding: 1rem 2rem;
       border: 0.1rem solid rgb(106, 103, 103);
       border-radius: 0.5rem;
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
 
 
       @media (width <= 430px) {
-        font-size: 4rem;
+        font-size: 3rem;
         height: 10rem;
         width: 70rem;
         padding-left: 2rem;
@@ -427,13 +427,10 @@ header {
       }
     }
 
-    label[for="message-me"] {
-      padding-bottom: 0.4rem;
-    }
     & #message-me {
-      font-size: 2.5rem;
-      width: 50rem;
-      height: 20rem;
+      font-size: 1.5rem;
+      width: 40rem;
+      height: 30rem;
       padding: 1rem 2rem;
       border: 0.1rem solid rgb(96, 94, 94);
       border-radius: 0.5rem;
@@ -449,13 +446,13 @@ header {
     }
 
     & .buttons button {
-      height: 6rem;
+      height: 4rem;
       width: 13rem;
       border-radius: 0.5rem;
       border: 0.1rem solid rgb(27, 26, 26);
       background-color: hsl(214, 85%, 52%);
       color: rgb(239, 235, 235);
-      font-size: 2.5rem;
+      font-size: 2rem;
       display: flex;
       justify-content: center;
       align-items: center;
