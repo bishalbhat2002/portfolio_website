@@ -21,13 +21,13 @@
     <header>
         <nav class="navbar">
             <div class="logo">
-                <a href="#"><img src="Logo.png" alt="logo"></a>
+                <a href="/"><img src="Logo.png" alt="logo"></a>
             </div>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#my-notes-id">Notes</a></li>
-                <li><a href="#about-me-id">About</a></li>
-                <li><a href="#my-contact-me-id" id="lastchild">Contact</a></li>
+                <li><a class="navlink" href="#home">Home</a></li>
+                <li><a class="navlink" href="#notes">Notes</a></li>
+                <li><a class="navlink" href="#about">About</a></li>
+                <li><a class="navlink" href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -36,11 +36,11 @@
         <!-- Main Section Start -->
         <main>
             <!-- Home Tab Section Start -->
-            <section class="hero" id="my-hero-id">
+            <section class="hero" id="home">
                 <div class="intro">
-                    <span class="main-section-intro">Hello, Welcome</span>
+                    <span class="main-section-intro">Hey, 🙋‍♂️</span>
                     <h1>I'm Bishal Bhat</h1>
-                    <p class="main-section-desc">Front-End Developer, CS Student FWU</p>
+                    <p class="main-section-desc">Full-Stack Developer, <br>CSIT Student FWU</p>
                 </div>
                 <div class="image">
                     <div class="imageplaceholder">
@@ -51,9 +51,9 @@
 
 
             <!-- For Notes Section Start -->
-            <section class="my-notes-class" id="my-notes-id">
+            <section class="my-notes-class" id="notes">
                 <div class="container">
-                    <div class="notes-label">CSIT NOTES</div>
+                    <div class="notes-label">FWU CSIT NOTES</div>
                     <div class="semesters-note">
                         <div><a href="https://drive.google.com/drive/folders/1ZogBqurORFt15fuWtuaofWu5HgEtgLg-"
                                 target="_blank" >Entrance Qns</a></div>
@@ -82,23 +82,18 @@
 
 
             <!-- About Me Section Start -->
-            <div class="aboutme" id="about-me-id">
+            <div class="aboutme" id="about">
                 <div class="about-me-container">
                     <h2>About Me</h2>
                     <p>
                         <span class="highlighter">Hi there! Myself Bishal Bhat... <br></span>
-                        I'm a Computer Science student with a passion for coding and Web Development.
-                        I have experience with C and C++, and well-versed in graphics design,
-                        which helps me in bringing a creative touch to my projects.
+                       I’m a CSIT student with a strong passion for coding and learning new technologies. I enjoy building things with code and constantly exploring new tools and ideas. I have experience with C, C++, Java, JavaScript, MySQL, React, and I also work with design tools like Figma, Photoshop, and Illustrator.
                     </p>
                     <p>
-                        When I'm not coding, I read books, watch anime, or explore different kinds of things.
+                        When I'm not coding, I read books, watch anime, and explore different kinds of things.
                         I love learning new things and staying curious.
                     </p>
-                    <p>
-                        My goal is to become a full-stack developer, and I'm excited about the journey ahead. I'm all
-                        about
-                        combining smart work with hard work, and I'm always looking for ways to grow and improve.
+                    <p>My goal is to become a full-stack developer, and I’m genuinely excited about the journey ahead. I believe in combining smart work with hard work, and I’m always looking for opportunities to grow, improve, and create meaningful digital experiences.
                         <span class="about-me-thanks">Thanks for stopping by, and I hope we can connect !!</span>
                     </p>
                 </div>
@@ -107,7 +102,7 @@
 
 
             <!-- Contact Me Section Start -->
-            <section class="my-contact-me" id="my-contact-me-id">
+            <section class="my-contact-me" id="contact">
                 <form action="POST" class="form">
                     <div class="contact-me">Contact Me</div>
                     <label for="name">Name:</label>
@@ -147,6 +142,7 @@
         </footer>
         <!-- Footer Section End -->
 
+        <script src="script.js"></script>
 </body>
 
 </html>
