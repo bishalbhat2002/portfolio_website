@@ -636,3 +636,51 @@ footer {
 }
 
 /* Media Queries Section End */
+
+
+
+
+/* latest css code... for improvement start */
+.about-me-container .my-project-heading{
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: rgb(46, 45, 45);
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.about-me-container ul{
+  list-style-type: square;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 0.4rem;
+  padding-left: 2rem;
+  margin-left: 2rem;
+
+  & li {
+    font-size: 1.5rem;
+
+    & span {
+      font-weight: 400;
+      color: rgb(46, 45, 45);
+    }
+
+    & a {
+      color: rgb(50, 50, 50);
+      margin-left: 1rem;
+      font-size: 1.9rem;
+
+      &:hover {
+          color: rgb(14, 12, 12);
+      }
+      &:active {
+        color: rgb(127, 127, 127);
+      }
+    }
+  }
+}
+
+
+/* latest css code... for improvement end */
