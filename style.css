@@ -6,14 +6,12 @@
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal;
-  scroll-behavior: smooth;
-  /* border: 0.1px solid red; */
 }
 
 :root {
   --headercolor: #242424;
   --footercolor: #1d1d1d;
-  --bodycolor: rgba(69, 70, 68, 0.949);
+  --bodycolor: rgb(41, 48, 74);
 
   --containercolor: rgba(249, 249, 249, 0.915);
   --bordercolor: rgba(216, 216, 216, 0.848);
