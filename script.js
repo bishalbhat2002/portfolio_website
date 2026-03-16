@@ -19,4 +19,28 @@ window.addEventListener("hashchange", ()=>{
   
 })
 
+
+const cursor = document.querySelector(".cursor");
+
+document.addEventListener("mouseenter", (e)=>{
+
+     cursor.style.display = "block";
+})
+
+document.addEventListener("mousemove", (e)=>{
+     let x = e.clientX;
+     let y = e.clientY;
+
+     cursor.style.left = x + "px";
+     cursor.style.top = y + "px";
+
+})
+
+document.addEventListener("mouseleave", (e)=>{
+     cursor.style.display = "none";
+})
+
+
+
+
 // console.log("FEfwe")

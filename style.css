@@ -39,6 +39,7 @@ html, body{
 body {
   background: var(--bodycolor);
   overflow-x: hidden;
+  cursor: none;
 }
 
 @keyframes animateScaleBigSmall {
@@ -83,6 +84,7 @@ header {
 .logo img {
   height: 6rem;
   width: 6rem;
+  cursor: none;
   @media (width <=430px) {
     height: 10rem;
     width: 10rem;
@@ -104,6 +106,7 @@ header {
   color: rgb(234, 234, 234);
   font-size: 2rem;
   position: relative;
+  cursor: none;
 }
 
 @media (width <= 430px){
@@ -146,6 +149,56 @@ header {
 }
 
 /* Header Section Code End */
+
+
+/* Trailing Cursor Styles Start */
+.cursor{
+  position: fixed;
+  top: 0rem;
+  left: 0rem;
+  pointer-events: none;
+  z-index: 1000;
+  display: none;
+}
+
+.inner-cursor{
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 50%;
+  background-color: #49f9ff;
+  opacity: 90%;
+  pointer-events: none;
+  transition: all 150ms ease-out;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+}
+.outer-cursor{
+  height: 3rem;
+  width: 3rem;
+  border-radius: 100%;
+  opacity: 80%;
+  background: radial-gradient(rgb(52, 52, 52), rgb(143, 255, 218));
+  pointer-events: none;
+  transition: all 150ms ease-out;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  animation: cursorScale 0.8s ease-in-out infinite alternate;
+}
+
+@keyframes cursorScale {
+  from {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.8;
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 0.4;
+  }
+}
+/* Trailing Cursor Styles End */
+
+
 
 /* Main Section Code Start */
 
