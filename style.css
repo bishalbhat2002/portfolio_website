@@ -6,6 +6,7 @@
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal;
+  cursor: none;
 }
 
 :root {
@@ -32,7 +33,8 @@ html {
   font-size: 62.5%;
 }
 
-html, body{
+html,
+body {
   scroll-behavior: smooth;
 }
 
@@ -91,12 +93,16 @@ header {
   }
 }
 
-
 .navbar ul {
   list-style-type: none;
   display: flex;
   gap: 1rem;
+
+  @media (width <= 620px) {
+    margin-top: 3rem;
+  }
 }
+
 
 .navlink {
   text-decoration: none;
@@ -109,8 +115,8 @@ header {
   cursor: none;
 }
 
-@media (width <= 430px){
-  .navlink{
+@media (width <= 430px) {
+  .navlink {
     font-size: 2.9rem;
   }
 }
@@ -150,9 +156,8 @@ header {
 
 /* Header Section Code End */
 
-
 /* Trailing Cursor Styles Start */
-.cursor{
+.cursor {
   position: fixed;
   top: 0rem;
   left: 0rem;
@@ -161,7 +166,7 @@ header {
   display: none;
 }
 
-.inner-cursor{
+.inner-cursor {
   height: 1.5rem;
   width: 1.5rem;
   border-radius: 50%;
@@ -173,7 +178,7 @@ header {
   transform: translate(-50%, -50%);
   z-index: 20;
 }
-.outer-cursor{
+.outer-cursor {
   height: 3rem;
   width: 3rem;
   border-radius: 100%;
@@ -198,8 +203,6 @@ header {
 }
 /* Trailing Cursor Styles End */
 
-
-
 /* Main Section Code Start */
 
 /* Main -> Home Section */
@@ -207,15 +210,13 @@ header {
   height: 100dvh;
   width: 100vw;
 
-  
-  
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 5rem;
   /* margin-top: 10vh; */
-  
-  @media (width <=430px){
+
+  @media (width <=430px) {
     height: 80dvh;
     width: 100vw;
   }
@@ -228,6 +229,7 @@ header {
       height: 60rem;
       width: 70rem;
     }
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -237,6 +239,7 @@ header {
     & .main-section-intro {
       color: rgb(228, 225, 225);
       font-size: 3rem;
+
       @media (width <= 430px) {
         font-size: 5rem;
       }
@@ -297,7 +300,8 @@ header {
       align-items: center;
       background-image: url("image.png");
       background-size: cover;
-      box-shadow: 0 0 0 0.7rem rgb(13, 169, 73),
+      box-shadow:
+        0 0 0 0.7rem rgb(13, 169, 73),
         0 1rem 4rem 1rem rgba(63, 63, 63, 0.211);
     }
   }
@@ -305,9 +309,212 @@ header {
 
 /* Main -> Home section End */
 
+/* Main -> Projects section Start */
+.projects {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  padding-top: 15vh;
+}
+
+.tools-technologies{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  & h3 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: rgb(214, 214, 214);
+    @media (width <= 430px) {
+      font-size: 4rem;
+    }
+  }
+}
+  
+.slider-container{
+  height: 5rem;
+  background: linear-gradient(90deg, rgb(41, 194, 255), rgb(57, 255, 57));
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* gap: 2rem; */
+}
+
+.slider{
+  display: flex;
+  margin-left: 2rem;
+  gap: 2rem;
+  width: max-content;
+  animation: infiniteScrollLeft 15s linear infinite;
+  /* animation: infiniteScrollLeft 2s linear infinite; */
+
+  li{
+    list-style: none;
+    font-size: 2rem;
+    font-weight: 600;
+    color: rgb(46, 45, 45);
+    text-wrap: nowrap;
+  }
+
+}
+
+
+@keyframes infiniteScrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+
+/* project showcase code start */
+.projects-container h2 {
+  font-size: 4rem;
+  font-weight: 800;
+  /* color: rgb(245, 245, 245); */
+  background: linear-gradient(270deg, rgb(255, 255, 255), rgb(255, 128, 8));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 2rem;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+
+.project-showcase-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 3rem;
+  padding-top: 0;
+}
+
+.project-card {
+  width: 35rem;
+  background-color: rgb(241, 241, 241);
+  border-radius: 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-image-container{
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  border:1px solid rgb(181, 181, 181);
+  border-radius: 0.4rem;
+}
+
+.project-image-container img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+
+.project-card:hover {
+  transform: scale(1.01) translate(0, -4px);
+  box-shadow: 0 0.5rem 3rem 0.2rem rgba(63, 153, 255, 0.459);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+
+.project-description {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;  
+
+  & h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: rgb(46, 45, 45);
+  }
+
+  & p {
+    font-size: 1.4rem;
+    color: rgb(50, 50, 50);
+    line-height: 2rem;
+    text-overflow: ellipsis;
+     display: -webkit-box;
+     -webkit-line-clamp: 8; /* Number of lines to show */
+     -webkit-box-orient: vertical;
+     overflow: hidden;
+  }
+}
+
+.project-tags-container{
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+
+  .project-tag {
+    font-size: 1.2rem;
+    text-wrap: nowrap;
+    color: rgb(255, 255, 255);
+    background-color: rgba(28, 28, 28, 0.826);
+    padding: 0.3rem 0.8rem;
+    border-radius: 0.5rem;
+    display: inline-block;
+  }
+}
+
+.project-options {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+
+  & a {
+    color: rgb(63, 63, 63);
+    background-color: rgba(214, 214, 214, 0.456);
+    font-size: 1.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+
+    &:hover {
+      background-color: rgb(89, 29, 112);
+      color: rgb(208, 208, 208);
+      transition: all 0.3s ease-in-out;
+    }
+
+    &:active {
+      background-color: rgb(176, 177, 176);
+      color: rgb(28, 28, 28);
+      transition: all 0.3s linear;
+    }
+  }
+} 
+
+
+
+/* project showcase code end */
+
+
+
+
+/* Main -> Projects section End */
+
 /* Main -> Notes section Start */
 .my-notes-class {
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   display: flex;
   justify-content: center;
@@ -402,19 +609,17 @@ header {
 .aboutme {
   height: 100vh;
   width: 100vw;
-
   display: flex;
   justify-content: center;
   align-items: center;
   animation: animateScaleBigSmall 2s ease-in-out infinite alternate;
 
-
   & .about-me-container {
     min-height: 50rem;
     width: 80rem;
     margin-top: 10vh;
-    background-color: var(--containercolor);
     box-shadow: 0 0.5rem 1rem 0 rgba(28, 26, 26, 0.332);
+    border: 0.1rem solid rgba(216, 216, 216, 0.229);
     border-radius: 2rem;
     padding: 0 5rem;
     display: flex;
@@ -422,6 +627,11 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    @media (width <= 430px) {
+      width: 100%;
+      border: none;
+    }
 
     & h2 {
       display: block;
@@ -433,19 +643,24 @@ header {
       font-size: 3rem;
       font-weight: 800;
       width: 100%;
-      border-bottom: 2px solid rgb(83, 81, 81);
+      border-bottom: 2px solid rgb(110, 109, 109);
 
       @media (width <= 430px) {
         font-size: 5rem;
         margin-bottom: 5rem;
       }
-      color: rgb(46, 45, 45);
+      color: rgb(247, 247, 247);
     }
 
     & p {
       font-size: 1.9rem;
       padding: 0.5rem 0;
       line-height: 2.5rem;
+      text-align: left;
+      color: rgb(218, 218, 218);
+      line-height: 2.9rem;
+      margin-bottom: 1rem;
+
 
       @media (width <= 430px) {
         font-size: 2.8rem;
@@ -462,22 +677,9 @@ header {
         }
       }
     }
-
-    & .about-me-thanks {
-      display: flex;
-      font-weight: 500;
-
-      justify-content: right;
-      margin-top: 2rem;
-      margin-bottom: 2rem;
-      font-size: 2rem;
-
-      @media (width <= 430px) {
-        font-size: 3rem;
-      }
-    }
   }
 }
+
 /* Main -> About Me Section End */
 
 /* Main -> Contact Me Section Start */
@@ -493,7 +695,7 @@ header {
   & .form {
     height: 50rem;
     width: 50rem;
-    
+
     margin-top: 15vh;
     animation: animateScaleBigSmall 2s ease-in-out infinite alternate;
     @media (width <= 430px) {
@@ -675,6 +877,16 @@ footer {
   }
 }
 
+@media (width<=700px) {
+ .hero{
+  flex-direction: column;
+ }
+   & .intro {
+      align-items: center;
+    }
+}
+
+
 @media (width<=430px) {
   html {
     font-size: 26%;
@@ -690,11 +902,8 @@ footer {
 
 /* Media Queries Section End */
 
-
-
-
 /* latest css code... for improvement start */
-.about-me-container .my-project-heading{
+.about-me-container .my-project-heading {
   font-size: 1.8rem;
   font-weight: 600;
   color: rgb(46, 45, 45);
@@ -702,7 +911,7 @@ footer {
   margin-bottom: 0.5rem;
 }
 
-.about-me-container ul{
+.about-me-container ul {
   list-style-type: square;
   display: flex;
   flex-direction: column;
@@ -726,7 +935,7 @@ footer {
       font-size: 1.9rem;
 
       &:hover {
-          color: rgb(14, 12, 12);
+        color: rgb(14, 12, 12);
       }
       &:active {
         color: rgb(127, 127, 127);
@@ -734,6 +943,5 @@ footer {
     }
   }
 }
-
 
 /* latest css code... for improvement end */
