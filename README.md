@@ -8,8 +8,6 @@ However, it represents one of my **early steps in learning HTML, CSS, and JavaSc
 ## 🌐 Project Live Demo  
 Access the website through link:  
 https://bishalbhat2002.vercel.app/  
-or,  
-https://bishalbhat2002.github.io/portfolio_website/  
 
 ---
 
