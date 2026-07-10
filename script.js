@@ -1,97 +1,144 @@
 import { projectsData } from "./data.js";
 import { toolsData } from "./data.js";
 
+/* ===== Mobile Menu ===== */
+const navToggle = document.querySelector(".nav-toggle");
+const navList = document.querySelector(".nav-list");
 
-window.addEventListener("DOMContentLoaded", ()=>{
-     const navLinks = document.querySelectorAll(".navlink");
-     navLinks[0].classList.add("active-navlink");
-})
+if (navToggle && navList) {
+  navToggle.addEventListener("click", () => {
+    const isActive = navToggle.classList.toggle("active");
+    navList.classList.toggle("active");
+    navToggle.setAttribute("aria-expanded", isActive);
+    document.body.classList.toggle("menu-open");
+  });
 
-window.addEventListener("hashchange", ()=>{
-     const activePage = window.location.hash;
-     const navLinks = document.querySelectorAll(".navlink");
+  document.querySelectorAll(".navlink").forEach(link => {
+    link.addEventListener("click", () => {
+      navToggle.classList.remove("active");
+      navList.classList.remove("active");
+      navToggle.setAttribute("aria-expanded", "false");
+      document.body.classList.remove("menu-open");
+    });
+  });
+}
 
-     navLinks.forEach(element => {
-          // console.log(element.hash)
-          if(element.hash === activePage){
-               element.classList.add("active-navlink");
-               console.log(element)
-          }else{
-               element.classList.remove("active-navlink");
-          }
-     });
-  
-})
+/* ===== Active Navigation ===== */
+const navLinks = document.querySelectorAll(".navlink");
+const sections = document.querySelectorAll("section[id]");
 
+navLinks[0].classList.add("active-navlink");
 
-const cursor = document.querySelector(".cursor");
+function setActiveNav(id) {
+  navLinks.forEach(link => {
+    link.classList.toggle("active", link.getAttribute("href") === `#${id}`);
+  });
+}
 
-document.addEventListener("mouseenter", (e)=>{
+window.addEventListener("hashchange", () => {
+  const active = window.location.hash.replace("#", "");
+  if (active) setActiveNav(active);
+});
 
-     cursor.style.display = "block";
-})
+window.addEventListener("scroll", () => {
+  let current = "";
+  sections.forEach(section => {
+    const top = section.offsetTop;
+    if (scrollY >= top - 150) {
+      current = section.getAttribute("id");
+    }
+  });
+  if (current) setActiveNav(current);
 
-document.addEventListener("mousemove", (e)=>{
-     let x = e.clientX;
-     let y = e.clientY;
+  const header = document.querySelector("header");
+  if (header) {
+    header.classList.toggle("scrolled", window.scrollY > 50);
+  }
+});
 
-     cursor.style.left = x + "px";
-     cursor.style.top = y + "px";
-
-})
-
-document.addEventListener("mouseleave", (e)=>{
-     cursor.style.display = "none";
-})
-
-
-
-// console.log(projectsData)
-
-// Dymanically adding projects to the projects section
+/* ===== Render Projects ===== */
 const projectsContainer = document.getElementById("project-showcase-container");
 
-projectsData.forEach(project=>(
-     projectsContainer.innerHTML += `<div class="project-card">
-                            <div class="project-image-container">
-                                <img src="${project.thumbnail}" alt="Project Image">
-                            </div>
-                            <div class="project-description">
-                                <h3>${project?.name}</h3>
-                                <p>${project?.description}</p>
-                            </div>
-                            <div class="project-tags-container">
-                              ${
-                                   project.tags?.map(tag=>(
-                                        `<span class="project-tag">${tag}</span>`
-                                   ))
-                              }
-                            </div>
-                            <div class="project-options">
-                              ${project?.links?.yt ? `<a href="${project.links.yt}" target="_blank">Demo video</a>` : ""}
-                              ${project?.links?.website ? `<a href="${project.links.website}" target="_blank">Website</a>` : ""}
-                              ${project?.links?.code ? `<a href="${project.links.code}" target="_blank">Code</a>` : ""}
-                            </div>
-                        </div>`
-))
+if (projectsContainer && projectsData) {
+  projectsData.forEach(project => {
+    const card = document.createElement("div");
+    card.className = "project-card";
 
+    const tagsHtml = (project.tags || [])
+      .map(tag => `<span class="project-tag">${tag}</span>`)
+      .join("");
 
-// Dynamically adding tools to the tools section
+    const links = project.links || {};
+    const linksHtml = [
+      links.yt ? `<a href="${links.yt}" target="_blank" rel="noopener noreferrer">Demo video</a>` : "",
+      links.website ? `<a href="${links.website}" target="_blank" rel="noopener noreferrer">Website</a>` : "",
+      links.code ? `<a href="${links.code}" target="_blank" rel="noopener noreferrer">Code</a>` : ""
+    ].filter(Boolean).join("");
+
+    card.innerHTML = `
+      <div class="project-image-container">
+        <img src="${project.thumbnail || ""}" alt="${project.name || "Project"}">
+      </div>
+      <div class="project-description">
+        <h3>${project.name || ""}</h3>
+        <p>${project.description || ""}</p>
+      </div>
+      <div class="project-tags-container">${tagsHtml}</div>
+      <div class="project-options">${linksHtml}</div>
+    `;
+
+    projectsContainer.appendChild(card);
+  });
+}
+
+/* ===== Render Tools Slider ===== */
 const sliderContainer = document.getElementById("slider-container");
 
-const addSliderItems = (tools)=>(
-          sliderContainer.innerHTML += `<ul class="slider">
-                         ${tools.map(tool=>(
-                              `<li>${tool}</li>`
-                         ))} 
-                         ${tools.map(tool=>(
-                              `<li>${tool}</li>`
-                         ))}
-                         ${tools.map(tool=>(
-                              `<li>${tool}</li>`
-                         ))}
-                         </ul>`
-     )
+if (sliderContainer && toolsData && toolsData.length > 0) {
+  const createSlider = () => {
+    const ul = document.createElement("ul");
+    ul.className = "slider";
+    const items = [...toolsData, ...toolsData];
+    items.forEach(tool => {
+      const li = document.createElement("li");
+      li.textContent = tool;
+      ul.appendChild(li);
+    });
+    sliderContainer.appendChild(ul);
+  };
 
-     addSliderItems(toolsData);
-     addSliderItems(toolsData);
+  for (let i = 0; i < 3; i++) {
+    createSlider();
+  }
+}
+
+/* ===== Scroll Reveal ===== */
+const revealElements = document.querySelectorAll(".reveal");
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("active");
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+revealElements.forEach(el => revealObserver.observe(el));
+
+/* ===== Custom Cursor ===== */
+const cursor = document.querySelector(".cursor");
+
+if (cursor && window.matchMedia("(pointer: fine)").matches) {
+  document.addEventListener("mouseenter", () => {
+    cursor.style.display = "block";
+  });
+
+  document.addEventListener("mousemove", (e) => {
+    cursor.style.left = e.clientX + "px";
+    cursor.style.top = e.clientY + "px";
+  });
+
+  document.addEventListener("mouseleave", () => {
+    cursor.style.display = "none";
+  });
+}

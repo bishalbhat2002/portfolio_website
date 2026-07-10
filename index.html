@@ -1,223 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bishal Portfolio</title>
+    <meta name="description" content="Bishal Bhat - Full-Stack Developer Portfolio">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
-
 <body>
-
-        <!-- Header Section Start-->
     <header>
         <nav class="navbar">
             <div class="logo">
-                <a href="/"><img src="Logo.png" alt="logo"></a>
+                <a href="/" aria-label="Bishal Portfolio Home">
+                    <img src="Logo.png" alt="Logo" loading="eager">
+                </a>
             </div>
-            <ul>
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-list">
                 <li><a class="navlink" href="#home">Home</a></li>
                 <li><a class="navlink" href="#projects">Projects</a></li>
                 <li><a class="navlink" href="#about">About</a></li>
                 <li><a class="navlink" href="#notes">Notes</a></li>
+                <li><a class="navlink" href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
-        <!-- Header Section End -->
 
-        <!-- Trailing Cursor Divs -->
-         <div class="cursor">
-             <div class="inner-cursor"></div>
-             <div class="outer-cursor"></div>
-        </div>
+    <div class="cursor">
+        <div class="inner-cursor"></div>
+        <div class="outer-cursor"></div>
+    </div>
 
-        <!-- Main Section Start -->
-        <main>
-            <!-- Home Tab Section Start -->
-            <section class="hero" id="home">
+    <div class="orb orb-1" aria-hidden="true"></div>
+    <div class="orb orb-2" aria-hidden="true"></div>
+
+    <main>
+        <section class="hero reveal" id="home">
+            <div class="hero-container">
                 <div class="intro">
-                    <span class="main-section-intro">Hey, 🙋‍♂️</span>
+                    <span class="greeting">Hey, 🙋‍♂️</span>
                     <h1>I'm Bishal Bhat</h1>
-                    <p class="main-section-desc">Full-Stack Developer, <br>CSIT Student FWU</p>
-                </div>
-                <div class="image">
-                    <div class="imageplaceholder">
+                    <p class="hero-subtitle">Full-Stack Developer, CSIT Student FWU</p>
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn btn-primary">View Projects</a>
+                        <a href="#contact" class="btn btn-secondary">Contact Me</a>
                     </div>
                 </div>
-            </section>
-            <!-- Home Tab Section End -->
-
-            <!-- Projects Section Start -->
-            <div class="projects" id="projects">
-                <div class="projects-container">
-                    <div class="tools-technologies">
-                        <h3>
-                            Tools & Technologies I Use:
-                        </h3>
-
-                        <div class="slider-container" id="slider-container">
-                       
-                            <!-- <ul class="slider">
-                            <li>Html</li>
-                            <li>CSS</li>
-                            <li>JavaScript</li>
-                            <li>React</li>
-                            <li>Node.js</li>
-                            <li>Express.js</li>
-                            <li>MongoDB</li>
-                            <li>MySQL</li>   
-                            <li>JavaScript</li>
-                            <li>React</li>
-                            <li>Node.js</li>
-                            <li>Express.js</li>
-                            </ul>
-                        
-                         <ul class="slider">
-                            <li>Html</li>
-                            <li>CSS</li>
-                            <li>JavaScript</li>
-                            <li>React</li>
-                            <li>Node.js</li>
-                            <li>Express.js</li>
-                            <li>MongoDB</li>
-                            <li>MySQL</li>   
-                            <li>JavaScript</li>
-                            <li>React</li>
-                            <li>Node.js</li>
-                            <li>Express.js</li>
-                            <li>Html</li>            
-
-                        </ul> -->
-                    </div>
-
-                    </div>
-                    <h2>My Projects</h2>
-
-                    <!-- Project Showcase Code -->
-                    <div class="project-showcase-container" id="project-showcase-container">
-
-                        <!-- Dynamically added projects will appear here -->
-
-                        <!-- <div class="project-card">
-                            <div class="project-image-container">
-                                <img src="/projects/sms/admin.png" alt="Project Image">
-                            </div>
-                            <div class="project-description">
-                                <h3>Student Management System</h3>
-                                <p>A web-based application designed to manage student information, including enrollment, attendance, grades, and other academic records. It provides an efficient way for educational institutions to organize and access student data.</p>
-                            </div>
-                            <div class="project-tags-container">
-                                <span class="project-tag">Html</span>
-                                <span class="project-tag">CSS</span>
-                                <span class="project-tag">JS</span>
-                                <span class="project-tag">PHP</span>
-                                <span class="project-tag">MySQL</span>
-                            </div>
-                            <div class="project-options">
-                                <a href="#">Website</a>
-                                <a href="#">Demo video</a>
-                                <a href="#">Code</a>
-                            </div>
-                        </div> -->
-
-                    </div>
-                  
+                <div class="hero-image">
+                    <div class="imageplaceholder"></div>
                 </div>
             </div>
-            <!-- Project Section End -->
+        </section>
 
+        <section class="projects reveal" id="projects">
+            <div class="container">
+                <div class="tools-technologies">
+                    <h3>Tools & Technologies I Use:</h3>
+                    <div class="slider-container" id="slider-container"></div>
+                </div>
+                <div class="section-header">
+                    <h2>My Projects</h2>
+                </div>
+                <div class="project-showcase-container" id="project-showcase-container"></div>
+            </div>
+        </section>
 
-
-            <!-- About Me Section Start -->
-            <div class="aboutme" id="about">
+        <section class="aboutme reveal" id="about">
+            <div class="container">
                 <div class="about-me-container">
                     <h2>About Me</h2>
-
-                    <p>
-                        I am a passionate MERN Stack Full-Stack Developer with hands-on experience building web applications through personal projects. I enjoy creating clean, responsive, and user-friendly interfaces while developing efficient and scalable backend systems.
-                    </p>
-
-                    <p>  
-                        I have worked with technologies like MongoDB, Express.js, React.js, Node.js, Tailwind CSS, MySQL, PostgreSQL, and PHP. Alongside development, I also have experience in design tools such as Figma, Adobe Illustrator, Photoshop, and Canva, which helps me create visually appealing and well-structured applications.
-                    </p>  
-                    <p>
-                        Although I am at the early stage of my development journey, I am highly curious, motivated, and always eager to learn new technologies and improve my skills. I enjoy exploring new ideas, solving problems, and continuously growing as a developer.
-                    </p>
-                    <p>
-                        I am currently looking for opportunities where I can contribute, learn, and grow. I would love the chance to work together and build something meaningful.
-                    </p>
-                    
+                    <p>I am a passionate MERN Stack Full-Stack Developer with hands-on experience building web applications through personal projects. I enjoy creating clean, responsive, and user-friendly interfaces while developing efficient and scalable backend systems.</p>
+                    <p>I have worked with technologies like MongoDB, Express.js, React.js, Node.js, Tailwind CSS, MySQL, PostgreSQL, and PHP. Alongside development, I also have experience in design tools such as Figma, Adobe Illustrator, Photoshop, and Canva, which helps me create visually appealing and well-structured applications.</p>
+                    <p>Although I am at the early stage of my development journey, I am highly curious, motivated, and always eager to learn new technologies and improve my skills. I enjoy exploring new ideas, solving problems, and continuously growing as a developer.</p>
+                    <p>I am currently looking for opportunities where I can contribute, learn, and grow. I would love the chance to work together and build something meaningful.</p>
                     <p>Thanks for stopping by!!!</p>
                 </div>
             </div>
-            <!-- About Me Section End -->
+        </section>
 
-
-
-            
-            <!-- For Notes Section Start -->
-            <section class="my-notes-class" id="notes">
-                <div class="container">
-                    <div class="notes-label">FWU CSIT NOTES</div>
-                    <div class="semesters-note">
-                        <div><a href="https://drive.google.com/drive/folders/1ZogBqurORFt15fuWtuaofWu5HgEtgLg-"
-                                target="_blank" >Entrance Qns</a></div>
-                        <div><a href="https://drive.google.com/drive/folders/1mEQEDVc5QJFSPK5SCJ_1TWBMk4T9RVBt"
-                                target="_blank">Syllabus</a></div>
-                        <div><a href="https://drive.google.com/drive/folders/16g1u63s_1Y3mRitT3PA4vYCrWVT7MYIb"
-                                target="_blank">First Semester</a></div>
-                        <div><a href="https://drive.google.com/drive/folders/1V0dGyzHViBsJi3SJIsjmPdS8fbvGwNnG"
-                                target="_blank">Second Semester</a></div>
-                        <div><a href="https://drive.google.com/drive/folders/14huCUb9BT1gf0E8gJsMs-tezcoiH7iYn"
-                                target="_blank">Third Semester</a></div>
-                        <div><a href="https://drive.google.com/drive/folders/1EfmOaPk7g60Gs0Fz8ZvaF5zdOqUFmGp6"
-                                target="_blank">Fourth Semester</a></div>
-                        <div><a href="https://drive.google.com/drive/folders/1R-VrouWtaehhSqJdPh5-BrlK5sseVrT1"
-                                target="_blank">Fifth Semester</a></div>
-                        <div><a href="https://drive.google.com/drive/folders/19nkh1FsJHtGTeEBWr5IihmeMeKjTDWEF"
-                                target="_blank">Sixth Semester</a></div>
-                        <div><a href="https://drive.google.com/drive/folders/1vrZTkdTe4eDjQqZ7PXbTzMGiuwBx9RR1"
-                                target="_blank">Seventh Semester</a></div>
-                        <div><a href="https://drive.google.com/drive/folders/1XlCFRruBtfCqIGN25kgGu5OyU9SPehJ_?usp=sharing"
-                                target="_blank"">Eighth Semester</a></div>
-                    </div>
-                </div>
-            </section>
-            <!-- For Notes Section End -->
-
-            
-
-
-        </main>
-        <!-- Main Section End -->
-
-
-        <!-- Footer Section Start -->
-        <footer>
-            <div>
-                <div class="social-media">
-                    <ul>
-                        <li><a href="https://www.facebook.com/bishalbhat2002" target="_blank"><ion-icon name="logo-facebook"></ion-icon></a></li>
-                        <li><a href="https://www.instagram.com/bishalbhat2002" target="_blank"><ion-icon name="logo-instagram"></ion-icon></a></li>
-                        <li><a href="https://www.linkedin.com/in/bishalbhat2002" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a></li>
-                        <li><a href="https://github.com/bishalbhat2002" target="_blank"><ion-icon name="logo-github"></ion-icon></a></li>
-                        <li><a href="https://youtube.com/@bishalbhat2002" target="_blank"><ion-icon name="logo-youtube"></ion-icon></a></li>
-                    </ul>
+        <section class="notes reveal" id="notes">
+            <div class="container">
+                <div class="notes-label">FWU CSIT NOTES</div>
+                <div class="semesters-note">
+                    <div class="reveal"><a href="https://drive.google.com/drive/folders/1ZogBqurORFt15fuWtuaofWu5HgEtgLg-" target="_blank" rel="noopener noreferrer">Entrance Qns</a></div>
+                    <div class="reveal"><a href="https://drive.google.com/drive/folders/1mEQEDVc5QJFSPK5SCJ_1TWBMk4T9RVBt" target="_blank" rel="noopener noreferrer">Syllabus</a></div>
+                    <div class="reveal"><a href="https://drive.google.com/drive/folders/16g1u63s_1Y3mRitT3PA4vYCrWVT7MYIb" target="_blank" rel="noopener noreferrer">First Semester</a></div>
+                    <div class="reveal"><a href="https://drive.google.com/drive/folders/1V0dGyzHViBsJi3SJIsjmPdS8fbvGwNnG" target="_blank" rel="noopener noreferrer">Second Semester</a></div>
+                    <div class="reveal"><a href="https://drive.google.com/drive/folders/14huCUb9BT1gf0E8gJsMs-tezcoiH7iYn" target="_blank" rel="noopener noreferrer">Third Semester</a></div>
+                    <div class="reveal"><a href="https://drive.google.com/drive/folders/1EfmOaPk7g60Gs0Fz8ZvaF5zdOqUFmGp6" target="_blank" rel="noopener noreferrer">Fourth Semester</a></div>
+                    <div class="reveal"><a href="https://drive.google.com/drive/folders/1R-VrouWtaehhSqJdPh5-BrlK5sseVrT1" target="_blank" rel="noopener noreferrer">Fifth Semester</a></div>
+                    <div class="reveal"><a href="https://drive.google.com/drive/folders/19nkh1FsJHtGTeEBWr5IihmeMeKjTDWEF" target="_blank" rel="noopener noreferrer">Sixth Semester</a></div>
+                    <div class="reveal"><a href="https://drive.google.com/drive/folders/1vrZTkdTe4eDjQqZ7PXbTzMGiuwBx9RR1" target="_blank" rel="noopener noreferrer">Seventh Semester</a></div>
+                    <div class="reveal"><a href="https://drive.google.com/drive/folders/1XlCFRruBtfCqIGN25kgGu5OyU9SPehJ_?usp=sharing" target="_blank" rel="noopener noreferrer">Eighth Semester</a></div>
                 </div>
             </div>
+        </section>
+
+        <section class="contact reveal" id="contact">
+            <div class="container">
+                <div class="my-contact-me">
+                    <h2 class="contact-me">Get In Touch</h2>
+                    <form id="contact-form">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="John Doe" required>
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                        <label for="message-me">Message</label>
+                        <textarea id="message-me" name="message" placeholder="Write your message here..." required></textarea>
+                        <div class="buttons">
+                            <button type="submit">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="social-media">
+                <ul>
+                    <li><a href="https://www.facebook.com/bishalbhat2002" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><ion-icon name="logo-facebook"></ion-icon></a></li>
+                    <li><a href="https://www.instagram.com/bishalbhat2002" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><ion-icon name="logo-instagram"></ion-icon></a></li>
+                    <li><a href="https://www.linkedin.com/in/bishalbhat2002" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+                    <li><a href="https://github.com/bishalbhat2002" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><ion-icon name="logo-github"></ion-icon></a></li>
+                    <li><a href="https://youtube.com/@bishalbhat2002" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><ion-icon name="logo-youtube"></ion-icon></a></li>
+                </ul>
+            </div>
             <div class="copyright">&copy;2023. All rights reserved.</div>
-        </footer>
-        <!-- Footer Section End -->
+        </div>
+    </footer>
 
-        <script type="module" src="script.js"></script>
+    <script type="module" src="script.js"></script>
 </body>
-
 </html>
