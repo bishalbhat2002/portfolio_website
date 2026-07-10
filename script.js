@@ -107,9 +107,7 @@ if (sliderContainer && toolsData && toolsData.length > 0) {
     sliderContainer.appendChild(ul);
   };
 
-  for (let i = 0; i < 3; i++) {
-    createSlider();
-  }
+  createSlider();
 }
 
 /* ===== Scroll Reveal ===== */
